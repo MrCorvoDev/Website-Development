@@ -1,0 +1,61 @@
+//=======================================================================================================================================================================================================================================================
+.rating {
+   $em: 40;
+   @include dynamic-font($em, math.div($em, 1.75));
+   @function em($one, $two: $em) {
+      @return prc($one, $two, 1) + 0em;
+   }
+   $ratingColor: #ffb60a;
+   $paddingLeft: em(10);
+   $valueFontSize: 20;
+   display: flex;
+   align-items: flex-end;
+   @include transition($properties: #{opacity});
+   &.js_s-send-rating {
+      opacity: 0.2;
+   }
+   &__body {
+      position: relative;
+      line-height: 0.75;
+      span {
+         height: 100%;
+         pointer-events: none;
+         &:nth-child(1) {
+            position: relative;
+            z-index: 2;
+            background: $backgroundColor;
+         }
+         &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            color: $ratingColor;
+            z-index: 3;
+         }
+      }
+   }
+   &__items {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      z-index: 1;
+      input {
+         flex: 0 0 20%;
+         height: 100%;
+         width: 20%;
+         cursor: pointer;
+      }
+   }
+   &__value {
+      font-size: em($valueFontSize);
+      @function em($one, $two: $valueFontSize) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      padding-left: $paddingLeft;
+   }
+}
+//=======================================================================================================================================================================================================================================================

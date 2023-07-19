@@ -1,0 +1,18 @@
+{% macro rating(class, value, canBeEdited = true) %}
+<div class="rating form-{{ class }}__rating js_e-rating{{ (canBeEdited and " js_o-rating-edit") or "" }}">
+   <div class="rating__body">
+      <span>★★★★★</span>
+      <span>★★★★★</span>
+      {% if canBeEdited %}
+      <div class="rating__items">
+         <input type="radio" value="1" name="form-{{ class }}-rating">
+         <input type="radio" value="2" name="form-{{ class }}-rating">
+         <input type="radio" value="3" name="form-{{ class }}-rating">
+         <input type="radio" value="4" name="form-{{ class }}-rating">
+         <input type="radio" value="5" name="form-{{ class }}-rating">
+      </div>
+      {% endif %}
+   </div>
+   <div class="rating__value">{{ value }}</div>
+</div>
+{% endmacro %}

@@ -1,0 +1,27 @@
+{% from "macros/img.html" import img %}
+
+{% macro new(slideClasses, slides, navigation = navigation(img("♔img/icons/arrow.svg")), pagination = false, scrollbar = false) %}
+<div class="{{slideClasses}} swiper">
+   <div class="swiper-wrapper">
+      {% for slide in slides %}
+      <div class="swiper-slide">{{slide}}</div>
+      {% endfor %}
+   </div>
+   {{ navigation if navigation }}
+
+   {% if pagination | string === "true" %}<div class="swiper-pagination"></div>
+   {% else %}{{ pagination if pagination }}{% endif %}
+
+   {% if scrollbar | string === "true" %}<div class="swiper-scrollbar"></div>
+   {% else %}{{ scrollbar if scrollbar }}{% endif %}
+</div>
+{% endmacro %}
+
+{% macro navigation(content, contentPrev, contentNext) %}
+<button type="button" class="swiper-button-prev">
+   {% if contentPrev %}{{contentPrev}}{% else %}{{content}}{% endif %}
+</button>
+<button type="button" class="swiper-button-next">
+   {% if contentPrev %}{{contentNext}}{% else %}{{content}}{% endif %}
+</button>
+{% endmacro %}
