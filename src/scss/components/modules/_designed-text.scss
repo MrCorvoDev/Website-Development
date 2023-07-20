@@ -5,6 +5,7 @@
       @return prc($one, $two, 1) + 0em;
    }
    position: relative;
+   white-space: nowrap;
    &_outline {
       color: $color-2;
    }
