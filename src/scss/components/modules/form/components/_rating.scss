@@ -5,7 +5,7 @@
    @function em($one, $two: $em) {
       @return prc($one, $two, 1) + 0em;
    }
-   $ratingColor: #ffb60a;
+   $ratingColor: $color-1;
    $paddingLeft: em(10);
    $valueFontSize: 20;
    display: flex;
@@ -24,6 +24,7 @@
             position: relative;
             z-index: 2;
             background: $backgroundColor;
+            color: $color-5;
          }
          &:nth-child(2) {
             position: absolute;
@@ -51,6 +52,7 @@
       }
    }
    &__value {
+      display: none;
       font-size: em($valueFontSize);
       @function em($one, $two: $valueFontSize) {
          @return prc($one, $two, 1) + 0em;
