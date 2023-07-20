@@ -1,0 +1,103 @@
+//=======================================================================================================================================================================================================================================================
+.footer {
+   padding: em(200) 0;
+   @include media-query {
+      padding: em(100) 0;
+   }
+   position: relative;
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: em(30) em(20);
+      position: relative;
+      z-index: 2;
+   }
+   &__item {
+      position: relative;
+      &:before {
+         content: "";
+         position: absolute;
+         width: 300%;
+         height: 300%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0) 50%);
+         z-index: -1;
+      }
+   }
+   &__title {
+      font-size: em(33);
+      @function em($one, $two: 33) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      margin-bottom: em(20);
+      line-height: em(40);
+   }
+   &__paragraphs {
+      @include dynamic-max-width(347);
+      p {
+         margin-bottom: em(10);
+         &:last-child {
+            margin: 0;
+         }
+      }
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: em(10);
+   }
+   &__link {
+      font-size: em(21);
+      @include media-query {
+         font-size: em(30);
+      }
+      @function em($one, $two: 21) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      font-family: "Roboto", sans-serif;
+      line-height: em(25);
+      text-decoration: underline;
+      body.js_s-mouse &:hover {
+         text-decoration: none;
+      }
+   }
+   .designed-text {
+      font-size: em(75);
+      &:before {
+         content: "";
+         position: absolute;
+         width: 200%;
+         height: 600%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(ellipse, $color-2 40%, rgba(0, 0, 0, 0) 60%);
+         z-index: -1;
+      }
+   }
+   .perfect span {
+      text-decoration: underline;
+      body.js_s-mouse &:hover {
+         text-decoration: none;
+      }
+   }
+   &__decor {
+      span {
+         position: absolute;
+         bottom: 0;
+         img {
+            max-width: 100%;
+         }
+         &:nth-child(1) {
+            left: 0;
+         }
+         &:nth-child(2) {
+            left: 50%;
+         }
+      }
+   }
+}
+//=======================================================================================================================================================================================================================================================
