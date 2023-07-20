@@ -6,7 +6,7 @@
 .header {
    $headerBackground: rgba(#000, 0.75);
    $headerBlur: rem(2);
-   $menuBackground: rgba(#a23f3f, 0.75);
+   $menuBackground: rgba(#000, 0.75);
    $menuPaddingTB: 30;
    $menuPaddingRL: em(20);
    $burgerWidth: rem(30);
@@ -157,11 +157,33 @@
          }
       }
       &__link {
-         font-size: em(20);
+         font-size: em(22);
          @include media-query {
             font-size: em(30);
          }
-         text-transform: uppercase;
+         @function em($one, $two: 22) {
+            @return prc($one, $two, 1) + 0em;
+         }
+         line-height: em(30);
+         //Подчеркивание с центра(Ставить ссылке)
+         position: relative;
+         @include transition();
+         body.js_s-mouse &:hover {
+            &:before {
+               width: 100%;
+            }
+         }
+         &:before {
+            content: "";
+            position: absolute;
+            background-color: $color-1;
+            @include transition();
+            height: rem(2);
+            bottom: 0%;
+            left: 50%;
+            width: 0%;
+            transform: (translate(-50%, 0));
+         }
       }
    }
 }
