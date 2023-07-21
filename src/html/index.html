@@ -80,4 +80,51 @@
       <span>{{ img("♔img/decor/decor-4.jpg") }}</span>
    </div>
 </section>
+<section class="frequently">
+   <div class="frequently__body container">
+      <h2 class="frequently__title title">frequently bought</h2>
+      <div class="frequently__columns">
+         <div class="frequently__item">
+            <div class="frequently__image">
+               {{ img("♔img/frequently/1.jpg") }}
+            </div>
+            <div class="item-body">
+               <h3 class="item-body__title">lemon purelite beer</h3>
+               <div class="item-body__reviews">
+                  {{ rating("item-body", "4.6") }}
+                  <div class="item-body__review-title">201 reviews</div>
+               </div>
+            </div>
+         </div>
+         <div class="frequently__item">
+            <div class="frequently__image">
+               {{ img("♔img/frequently/2.jpg") }}
+            </div>
+            <div class="item-body">
+               <h3 class="item-body__title">apple purelite beer</h3>
+               <div class="item-body__reviews">
+                  {{ rating("item-body", "3.8") }}
+                  <div class="item-body__review-title">220 reviews</div>
+               </div>
+            </div>
+         </div>
+         <div class="frequently__item">
+            <div class="frequently__image">
+               {{ img("♔img/frequently/3.jpg") }}
+            </div>
+            <div class="item-body">
+               <h3 class="item-body__title">mint purelite beer</h3>
+               <div class="item-body__reviews">
+                  {{ rating("item-body", "4.2") }}
+                  <div class="item-body__review-title">143 reviews</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="frequently__decor">
+      <span>{{ img("♔img/decor/deocr-6") }}</span>
+      <span>{{ img("♔img/decor/deocr-7") }}</span>
+   </div>
+</section>
 {% endblock content %}
