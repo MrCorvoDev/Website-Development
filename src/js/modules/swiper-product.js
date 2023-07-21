@@ -4,9 +4,9 @@
  */
 //=======================================================================================================================================================================================================================================================
 (async () => {
-   const {default: Swiper, Keyboard, Navigation, Lazy} = await import(/* webpackPreload: true */ "swiper");
+   const {default: Swiper, Autoplay, Lazy} = await import(/* webpackPreload: true */ "swiper");
    new Swiper(".js_e-swiper-product", {
-      centeredSlides: true,
+      modules: [Autoplay, Lazy],
       grabCursor: true,
       slidesPerView: 2,
       spaceBetween: 30,
@@ -16,9 +16,9 @@
          loadPrevNext: true,
       },
       autoplay: {
-         delay: 500,
+         delay: 1000,
          disableOnInteraction: false, // Установите значение false, и авто воспроизведение не будет отключено после взаимодействия с пользователем, оно будет перезапускаться каждый раз после взаимодействия.
-         pauseOnMouseEnter: true,
+         pauseOnMouseEnter: false,
          // stopOnLastSlide: true, // Остановить на последнем
       },
    });
