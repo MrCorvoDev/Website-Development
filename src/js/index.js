@@ -6,6 +6,7 @@ import "./modules/scroll/to-anchor.js";
 import "./modules/full-screen.js";
 import "./modules/swiper-product.js";
 import "./modules/form/components/quantity.js";
+import "./modules/form/components/rating.js";
 import "./modules/sticky.js";
 import "./modules/resize.js";
 //=======================================================================================================================================================================================================================================================
