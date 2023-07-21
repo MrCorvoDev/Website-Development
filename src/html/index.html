@@ -1,3 +1,41 @@
 {% extends "base/layout.html" %}
 
-{% block content %}{% endblock content %}
+{% block content %}
+<section class="introduce">
+   <div class="introduce__body container js_e-vh" data-vh="introduce, 100, headerH">
+      <div class="introduce__row">
+         <div class="introduce__item introduce__item_first">
+            <h1 class="designed-text designed-text_outline">
+               <span>pure lite</span>
+               <span>pure lite</span>
+            </h1>
+            <div class="designed-text">
+               <span>pure lite</span>
+               <span>pure lite</span>
+            </div>
+            <div class="introduce__sub-title sub-title">
+               Pure Lite is a refreshing beverage with 7% alcohol. Every bottle contains the pure taste or beer you crave for.
+               <strong>Drink Responsibly.</strong>
+            </div>
+         </div>
+         <div class="introduce__item introduce__item_second">
+            <blockquote class="introduce__rotated-text"><span>make it new,</span><span>make it pure</span></blockquote>
+            <div class="introduce__decor">
+               <span>{{ img("♔img/decor/decor-2.jpg") }}</span>
+               <span>{{ img("♔img/introduce/shapes.svg") }}</span>
+            </div>
+            <h2 class="introduce__text">7*<br> strong<br> and<br> pure<br> dark beer</h2>
+         </div>
+      </div>
+      <div class="introduce__photos">
+         <span>{{ img("♔img/introduce/1.jpg") }}</span>
+         <span>{{ img("♔img/introduce/2.jpg") }}</span>
+         <span>{{ img("♔img/introduce/3.jpg") }}</span>
+      </div>
+   </div>
+   <div class="introduce__decor">
+      <span>{{ img("♔img/decor/decor-1.jpg") }}</span>
+      <span>{{ img("♔img/decor/decor-3.jpg") }}</span>
+   </div>
+</section>
+{% endblock content %}
