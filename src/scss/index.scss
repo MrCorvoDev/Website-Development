@@ -7,8 +7,144 @@
 //=======================================================================================================================================================================================================================================================
 @import "components/libs/lazysizes";
 @import "components/modules/header";
+@import "components/modules/full-screen";
 //=======================================================================================================================================================================================================================================================
-
+.introduce {
+   position: relative;
+   &__body {
+      padding-top: em(50);
+      padding-bottom: em(50);
+      position: relative;
+      z-index: 3;
+      min-height: var(--vh-introduce, 100vh);
+   }
+   &__row {
+      display: flex;
+      gap: em(30) em(60);
+      flex-wrap: wrap;
+      margin-bottom: em(34);
+      position: relative;
+      z-index: 2;
+   }
+   &__item {
+      &_first {
+      }
+      &_second {
+         flex: 1 1 auto;
+         padding-left: em(100);
+         position: relative;
+         margin-top: em(30);
+         .introduce__decor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            span {
+               &:nth-child(1) {
+                  left: em(100);
+                  top: 0;
+                  @include media-query($md1) {
+                     width: 60%;
+                  }
+               }
+               &:nth-child(2) {
+                  right: 0;
+                  top: 0;
+                  @include media-query($md1) {
+                     width: 10%;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &__sub-title {
+      @function em($one, $two: 21) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      padding-top: em(20);
+      @include dynamic-option(max-width, 484, 150);
+      @include media-query($md4) {
+         max-width: none;
+      }
+   }
+   &__rotated-text {
+      font-size: em(20);
+      @function em($one, $two: 20) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: inline-block;
+      span {
+         line-height: em(25);
+      }
+      transform: rotate(90deg) translate(-50%, 100%);
+      text-decoration: underline;
+      span {
+         display: block;
+         white-space: nowrap;
+      }
+   }
+   &__text {
+      font-size: em(41);
+      @function em($one, $two: 41) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      padding-top: em(50);
+      position: relative;
+      top: em(70);
+   }
+   & > &__decor span {
+      &:nth-child(1) {
+         bottom: 0;
+         left: 0;
+      }
+      &:nth-child(2) {
+         right: 4%;
+         bottom: 35%;
+         @include media-query($md4) {
+            bottom: 10%;
+         }
+      }
+   }
+   &__decor {
+      span {
+         position: absolute;
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+   &__photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: em(20);
+      span {
+         position: relative;
+         overflow: hidden;
+         flex: 1 1 calc(33.333% - em(20));
+         padding: 0 0 20% 0;
+         min-width: rem(220);
+         max-width: 50%;
+         margin: 0 auto;
+         @include media-query(477) {
+            max-width: rem(340);
+            padding: 0 0 30% 0;
+         }
+         img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+}
 //=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
