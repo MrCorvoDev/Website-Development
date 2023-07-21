@@ -460,6 +460,37 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+.discount {
+   padding: em(88) 0;
+   &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(#000, 0.3);
+      z-index: 2;
+   }
+   &__body {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 4;
+      gap: em(72);
+   }
+   &__title {
+      align-self: flex-start;
+      font-size: em(41);
+      text-decoration: underline;
+   }
+   &__big-title {
+      text-align: right;
+      align-self: flex-end;
+      font-size: em(77);
+   }
+}
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";
