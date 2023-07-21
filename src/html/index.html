@@ -1,4 +1,5 @@
 {% extends "base/layout.html" %}
+{% import "macros/swiper.html" as swiper %}
 
 {% block content %}
 <section class="introduce">
@@ -44,5 +45,16 @@
       <a href="#" class="question__btn btn"><span>Go To Store</span></a>
    </div>
    {{ img("♔img/question/bg-960.jpg 960w, ♔img/question/bg.jpg 1440w") }}
+</section>
+<section class="product">
+   <div class="product__body container">
+      <div class="product__column product__column_slider">
+         {% set arr = [] %}
+         {% for slide in slides %}{% set arr = (arr.push(
+            img(slide)
+         ), arr) %}{% endfor %}
+         {{ swiper.new("swiper-product js_e-swiper-product", arr, "") }}
+      </div>
+   </div>
 </section>
 {% endblock content %}
