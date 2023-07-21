@@ -3,6 +3,7 @@ import "lazysizes";
 import "./modules/define-device.js";
 import "./modules/menu/burger.js";
 import "./modules/scroll/to-anchor.js";
+import "./modules/full-screen.js";
 import "./modules/sticky.js";
 import "./modules/resize.js";
 //=======================================================================================================================================================================================================================================================
