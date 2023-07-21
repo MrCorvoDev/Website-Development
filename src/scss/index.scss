@@ -377,6 +377,89 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+.frequently {
+   position: relative;
+   padding: em(60) 0;
+   &__body {
+      position: relative;
+      z-index: 4;
+   }
+   &__title {
+      @function em($one, $two: 67) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      margin-bottom: em(45);
+   }
+   &__columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include dynamic-max-width(1060);
+      margin: 0 auto;
+      gap: em(30) em(98);
+   }
+   &__item {
+      flex: 1 1 calc(33.333% - em(98));
+      min-width: rem(250);
+      max-width: 50%;
+      margin: 0 auto;
+   }
+   &__image {
+      position: relative;
+      min-height: rem(389);
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+   }
+   .item-body {
+      position: relative;
+      z-index: 2;
+      margin-top: em(-60);
+      padding: 0 em(20);
+      &:before {
+         content: "";
+         position: absolute;
+         pointer-events: none;
+         width: 150%;
+         height: 300%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(circle, $backgroundColor 0%, rgba(0, 0, 0, 0) 60%);
+         z-index: -1;
+      }
+      &__title {
+         max-width: rem(197);
+      }
+      &__reviews {
+      }
+      &__review-title {
+         padding-top: em(10);
+      }
+   }
+   &__decor {
+      span {
+         position: absolute;
+         &:nth-child(1) {
+            bottom: 0;
+            left: 0;
+         }
+         &:nth-child(2) {
+            right: 0;
+            bottom: 35%;
+         }
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+}
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";
