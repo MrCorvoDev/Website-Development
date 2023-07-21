@@ -1,46 +1,46 @@
 //=======================================================================================================================================================================================================================================================
 .quantity {
-   $height: 50;
-   $color: #00802f;
+   $height: 53;
    @include dynamic-font(16, 14);
    display: inline-flex;
    height: em($height);
-   width: em($height * 3);
-   border-radius: em(math.div($height, 2));
-   background: color.scale($color, $lightness: +85%);
-   input,
-   button {
-      flex: 0 0 em($height);
-   }
+   width: em((($height - 5) * 2) + 72);
+   color: $color-3;
    button {
       position: relative;
       @include transition(0.1);
+      border: rem(3) solid $color-3;
+      flex: 0 0 em($height - 5);
       &:before,
       &[data-quant="+"]:after {
          content: "";
          position: absolute;
          top: 50%;
          left: 50%;
-         width: em(math.div($height, 4));
-         height: em(math.div($height, 16));
-         transform: translate(-50%, 0);
-         background: color.scale($color, $lightness: -85%);
+         width: em(math.div($height, 2.6));
+         height: em(math.div($height, 10.4));
+         transform: translate(-50%, -50%);
+         background: $color-3;
          @include transition(0.1);
       }
       &[data-quant="+"]:after {
-         transform: translate(-50%, 0) scale(1) rotate(90deg);
+         transform: translate(-50%, -50%) scale(1) rotate(90deg);
       }
       body.js_s-mouse &:active {
          &:before,
          &:after {
-            background: $color;
+            background: color.scale($color-3, $lightness: -10%);
          }
          transform: scale(1.1);
       }
    }
    input {
-      color: color.scale($color, $lightness: -85%);
-      min-width: em($height);
+      font-size: em(40);
+      @function em($one, $two: 40) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      color: $color-3;
+      min-width: em(72);
       text-align: center;
       background: transparent;
       pointer-events: none;

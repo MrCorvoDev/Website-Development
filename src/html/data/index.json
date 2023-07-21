@@ -3,5 +3,11 @@
       "title": "Главная",
       "description": "Description",
       "css": "index"
-   }
+   },
+   "slides": [
+      "♔img/product/1.jpg",
+      "♔img/product/2.jpg",
+      "♔img/product/3.jpg",
+      "♔img/product/4.jpg"
+   ]
 }

@@ -177,6 +177,206 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+@import "components/libs/swiper/core";
+@import "components/libs/swiper/components/a11y";
+@import "components/modules/form/base";
+@import "components/modules/form/null";
+@import "components/modules/form/components/quantity";
+@import "components/modules/form/components/rating";
+@import "components/modules/item-body";
+.product {
+   padding-top: em(135);
+   padding-bottom: em(90);
+   @include media-query {
+      padding-top: em(60);
+      padding-bottom: em(10);
+   }
+   position: relative;
+   &__body {
+      flex-wrap: wrap;
+      gap: em(30);
+      position: relative;
+      z-index: 3;
+      @include media-query($md3, min) {
+         display: flex;
+      }
+   }
+   &__column {
+      &_slider {
+         min-width: 0;
+         user-select: none;
+         position: relative;
+         z-index: -2;
+         flex: 0 1 em(652);
+         @include media-query($md2) {
+            flex: 0 1 em(500);
+         }
+         .swiper {
+            height: 100%;
+         }
+         .swiper-slide {
+            min-height: em(300);
+            img {
+               position: absolute;
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               object-fit: cover;
+            }
+         }
+      }
+      &_content {
+         flex: 0 1 calc(100% - em(652 + 30));
+         @include media-query($md2) {
+            flex: 0 1 calc(100% - em(500 + 30));
+         }
+         padding-right: rem(12);
+         @include dynamic-max-width(565);
+         margin: 0 auto;
+         @include media-query {
+            margin-top: em(-200);
+            padding: 0 rem(12);
+         }
+         @include media-query(340) {
+            padding: 0 rem(5);
+         }
+      }
+   }
+   %z-to-top {
+      position: relative;
+      z-index: 2;
+   }
+   &__top-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: em(168);
+      position: relative;
+      gap: em(20);
+      @include media-query {
+         margin-bottom: em(20);
+      }
+      &:before {
+         pointer-events: none;
+         content: "";
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(ellipse, $backgroundColor 0%, rgba(0, 0, 0, 0) 65%);
+         z-index: -2;
+      }
+   }
+   &__price {
+      @extend %z-to-top;
+      font-size: em(82);
+      @include media-query($md1) {
+         font-size: em(60);
+      }
+      @include media-query($md2) {
+         font-size: em(50);
+      }
+   }
+   &__quantity {
+      @extend %z-to-top;
+      @include media-query($md2) {
+         font-size: 0.9em;
+      }
+      @include media-query {
+         font-size: 1em;
+      }
+   }
+   &__sub-title {
+      @extend %z-to-top;
+      padding-top: em(32);
+      flex: 1 1 100%;
+      position: relative;
+      @include media-query($md1) {
+         padding-top: em(10);
+      }
+      @include media-query {
+         padding-top: 0;
+      }
+   }
+   &__bottom-info {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-left: em(-200);
+      width: calc(100% + em(200));
+      margin-bottom: em(60);
+      gap: em(30);
+      @include media-query {
+         width: 100%;
+         margin-left: 0;
+      }
+      &:before {
+         pointer-events: none;
+         content: "";
+         position: absolute;
+         width: 200%;
+         height: 400%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(circle, $backgroundColor 0%, rgba(0, 0, 0, 0) 45%);
+         z-index: -1;
+      }
+   }
+   .item-body {
+      @include dynamic-max-width(390, 765);
+      &__title {
+         @extend %z-to-top;
+      }
+      &__reviews {
+         @extend %z-to-top;
+      }
+      &__rating {
+         position: relative;
+         &:before {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            width: 200%;
+            height: 400%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(ellipse, $backgroundColor 35%, rgba(0, 0, 0, 0) 50%);
+            z-index: -1;
+         }
+      }
+      &__review-title {
+         @extend %z-to-top;
+      }
+   }
+   &__btn {
+      @extend %z-to-top;
+   }
+   &__decor {
+      span {
+         position: absolute;
+         &:nth-child(1) {
+            bottom: 0;
+            left: 0;
+         }
+         &:nth-child(2) {
+            right: 0;
+            bottom: 35%;
+         }
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+}
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";

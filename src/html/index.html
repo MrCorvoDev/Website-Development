@@ -1,4 +1,7 @@
 {% extends "base/layout.html" %}
+{% import "macros/swiper.html" as swiper %}
+{% from "macros/quantity.html" import quantity %}
+{% from "macros/rating.html" import rating %}
 
 {% block content %}
 <section class="introduce">
@@ -44,5 +47,37 @@
       <a href="#" class="question__btn btn"><span>Go To Store</span></a>
    </div>
    {{ img("♔img/question/bg-960.jpg 960w, ♔img/question/bg.jpg 1440w") }}
+</section>
+<section class="product">
+   <div class="product__body">
+      <div class="product__column product__column_slider">
+         {% set arr = [] %}
+         {% for slide in slides %}{% set arr = (arr.push(
+            img(slide)
+         ), arr) %}{% endfor %}
+         {{ swiper.new("swiper-product js_e-swiper-product", arr, "") }}
+      </div>
+      <div class="product__column product__column_content">
+         <div class="product__top-info">
+            <span class="product__price">$4.60</span>
+            {{ quantity("product") }}
+            <p class="product__sub-title sub-title">Massive malt meets big hops in this classic flavor for maximum effect. Several North American hops and large British malts create powerful tropical fruit aromas up front, followed by a cleansing bitter finish. This classic flavor is considered a big guy drink, yet it's simple to handle thanks to a good dose of dry hopping.</p>
+         </div>
+         <div class="product__bottom-info">
+            <div class="item-body item-body_row">
+               <h3 class="item-body__title">classic purelite dark beer</h3>
+               <div class="item-body__reviews">
+                  {{ rating("item-body", "4.8") }}
+                  <div class="item-body__review-title">109 reviews</div>
+               </div>
+            </div>
+            <a href="#" class="product__btn btn"><span>Add To Cart</span></a>
+         </div>
+      </div>
+   </div>
+   <div class="product__decor">
+      <span>{{ img("♔img/decor/decor-5.jpg") }}</span>
+      <span>{{ img("♔img/decor/decor-4.jpg") }}</span>
+   </div>
 </section>
 {% endblock content %}
