@@ -519,6 +519,93 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+.products {
+   position: relative;
+   overflow: hidden;
+   padding: em(216) 0;
+   @include media-query {
+      padding: em(60) 0;
+   }
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: em(43) em(60);
+      position: relative;
+      z-index: 4;
+   }
+   &__item {
+      flex: 0 1 calc(50% - em(60));
+      min-width: rem(160);
+      @include media-query {
+         flex-grow: 1;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: em(20) em(45);
+      @include media-query($md1) {
+         gap: em(20) em(15);
+      }
+   }
+   &__image {
+      position: relative;
+      flex: 1 1 56.6%;
+      span {
+         padding-bottom: 65%;
+      }
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+   }
+   .item-body {
+      position: relative;
+      &:before {
+         content: "";
+         pointer-events: none;
+         position: absolute;
+         width: 300%;
+         height: 300%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0) 80%);
+         z-index: -1;
+      }
+      &__title {
+         @function em($one, $two: 41) {
+            @return prc($one, $two, 1) + 0em;
+         }
+         max-width: em(198);
+      }
+      &__reviews {
+      }
+      &__review-title {
+      }
+      &_row {
+      }
+   }
+   &__decor {
+      span {
+         position: absolute;
+         &:nth-child(1) {
+            top: 0;
+            right: 0;
+         }
+         &:nth-child(2) {
+            left: 0;
+            bottom: 0;
+         }
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+}
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";
