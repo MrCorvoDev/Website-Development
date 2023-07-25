@@ -495,6 +495,30 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+.advantages {
+   padding: em(80) 0;
+   @include media-query {
+      padding: em(60) 0;
+   }
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: em(20) em(37);
+   }
+   &__item {
+      font-size: em(33);
+      @function em($one, $two: 33) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      flex: 1 1 calc(33.333% - em(37));
+      padding: em(40) em(15);
+      text-align: center;
+      border: em(4) solid $color-1;
+      color: $color-3;
+      font-weight: bold;
+   }
+}
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";
