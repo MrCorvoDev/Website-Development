@@ -8,6 +8,8 @@
 @import "components/libs/lazysizes";
 @import "components/modules/header";
 @import "components/modules/full-screen";
+@import "components/modules/designed-text";
+@import "components/modules/sub-title";
 //=======================================================================================================================================================================================================================================================
 .introduce {
    position: relative;
@@ -878,8 +880,6 @@
 //=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
-@import "components/modules/designed-text";
-@import "components/modules/sub-title";
 @import "components/modules/footer";
 @import "components/libs/alertify";
 @import "components/modules/stop-anim-while-resize";
