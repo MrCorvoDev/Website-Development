@@ -227,4 +227,32 @@
    </div>
    {{ img("♔img/pure/bg-960.jpg 960w, ♔img/pure/bg.jpg 1440w") }}
 </section>
+<section class="reviews">
+   <div class="reviews__body container">
+      <h2 class="reviews__title title">customer reviews</h2>
+      <div class="reviews__items">
+         <div class="reviews__item">
+            <h3 class="reviews__name">Amelia Watson</h3>
+            <div class="reviews__row">
+               {{ rating("item-body", "4.4") }}
+               <time datetime="2021-08-01" class="reviews__time">08/01/2021</time>
+            </div>
+            <p class="reviews__sub-title sub-title">One of the best tasted beer I've ever had. the best beer available in the here, in my opinion. I have drank many award winning beers and my favorite brew is purelite.</p>
+         </div>
+         <div class="reviews__item">
+            <h3 class="reviews__name">Kiara Morisson</h3>
+            <div class="reviews__row">
+               {{ rating("item-body", "5") }}
+               <time datetime="2021-08-01" class="reviews__time">08/01/2021</time>
+            </div>
+            <p class="reviews__sub-title sub-title">One of the best tasted beer I've ever had. the best beer available in the here, in my opinion. I have drank many award winning beers and my favorite brew is purelite.</p>
+         </div>
+      </div>
+   </div>
+   <div class="reviews__decor">
+      <span>{{ img("♔img/decor/decor-8.jpg") }}</span>
+      <span>{{ img("♔img/decor/decor-10.jpg") }}</span>
+      <span>{{ img("♔img/decor/decor-11.jpg") }}</span>
+   </div>
+</section>
 {% endblock content %}
