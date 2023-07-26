@@ -255,4 +255,27 @@
       <span>{{ img("♔img/decor/decor-11.jpg") }}</span>
    </div>
 </section>
+<section class="newsletter">
+   <div class="newsletter__body container">
+      <h2 class="newsletter__title title">newsletter</h2>
+      <form action="#" enctype="multipart/form-data" method="post" class="form-newsletter">
+         <div class="form-newsletter__field">
+            <input type="text" autocomplete="name" name="form-newsletter[name]" data-placeholder="type your name here..." class="js_e-input input form-newsletter__input js_e-req">
+         </div>
+         <div class="form-newsletter__field">
+            <input type="text" autocomplete="email" name="form-newsletter[email]" data-placeholder="type your email here..." data-type="email" class="js_e-input input form-newsletter__input js_e-req">
+         </div>
+         <div class="form-newsletter__field">
+            <textarea name="form-newsletter[message]" data-placeholder="type your message here..." class="js_e-input input js_e-autosize js_e-req form-newsletter__input form-newsletter__input_textarea"></textarea>
+         </div>
+         <div class="form-newsletter__field">
+            <button type="submit" class="form-newsletter__btn btn"><span>submit information</span></button>
+         </div>
+      </form>
+   </div>
+   <div class="newsletter__decor">
+      <span>{{ img("♔img/decor/decor-10.jpg") }}</span>
+      <span>{{ img("♔img/decor/decor-11.jpg") }}</span>
+   </div>
+</section>
 {% endblock content %}

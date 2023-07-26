@@ -776,7 +776,102 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
-
+@import "components/modules/form/components/input";
+@import "components/modules/form/components/autosize-textarea";
+.newsletter {
+   padding: em(120) 0;
+   position: relative;
+   overflow: hidden;
+   @include media-query {
+      padding: em(80) 0;
+   }
+   &__body {
+      position: relative;
+      z-index: 4;
+   }
+   &__title {
+      @function em($one, $two: 67) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      margin-bottom: em(90);
+      @include media-query($md1) {
+         margin-bottom: em(40);
+      }
+      position: relative;
+      &:before {
+         content: "";
+         pointer-events: none;
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(ellipse, #000 0%, rgba(0, 0, 0, 0) 80%);
+         z-index: -1;
+      }
+   }
+   @at-root .form-newsletter {
+      @include dynamic-max-width(781);
+      margin: 0 auto;
+      position: relative;
+      &:before {
+         content: "";
+         pointer-events: none;
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0) 80%);
+         z-index: -1;
+      }
+      &__field {
+         margin-bottom: em(25);
+         &:last-child {
+            margin: 0;
+         }
+      }
+      &__input {
+         &_textarea {
+            min-height: em(186);
+            @include media-query {
+               min-height: em(110);
+            }
+         }
+      }
+      &__btn {
+         width: 100%;
+         background: $color-1;
+         color: $color-2;
+         font-size: em(21);
+         font-weight: bold;
+         body.js_s-mouse &:hover {
+            color: $color-1;
+         }
+         &:after {
+            background: $color-2;
+         }
+      }
+   }
+   &__decor {
+      span {
+         position: absolute;
+         &:nth-child(1) {
+            top: 10%;
+            left: 0;
+         }
+         &:nth-child(2) {
+            right: 15%;
+            bottom: 0;
+         }
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+}
 //=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
