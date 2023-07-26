@@ -677,6 +677,107 @@
    }
 }
 //=======================================================================================================================================================================================================================================================
+.reviews {
+   position: relative;
+   overflow: hidden;
+   padding-top: em(144);
+   padding-bottom: em(220);
+   &__body {
+      position: relative;
+      z-index: 4;
+   }
+   &__title {
+      @function em($one, $two: 67) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      margin-bottom: em(139);
+      @include media-query($md1) {
+         margin-bottom: em(40);
+      }
+      position: relative;
+      &:before {
+         content: "";
+         pointer-events: none;
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(ellipse, #000 0%, rgba(0, 0, 0, 0) 80%);
+         z-index: -1;
+      }
+   }
+   &__items {
+      @include dynamic-max-width(809);
+      margin: 0 auto;
+   }
+   &__item {
+      border-bottom: em(2) solid $color-5;
+      padding-bottom: em(40);
+      margin-bottom: em(40);
+      position: relative;
+      &:before {
+         content: "";
+         pointer-events: none;
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: radial-gradient(ellipse, #000 0%, rgba(0, 0, 0, 0) 80%);
+         z-index: -1;
+      }
+      &:last-child {
+         padding-bottom: 0;
+         margin-bottom: 0;
+         border: none;
+      }
+   }
+   &__name {
+      font-size: em(33);
+      @function em($one, $two: 33) {
+         @return prc($one, $two, 1) + 0em;
+      }
+      line-height: em(40);
+      margin-bottom: em(17);
+   }
+   &__row {
+      display: flex;
+      gap: em(19);
+      margin-bottom: em(25);
+      align-items: center;
+   }
+   &__time {
+      font-size: em(17);
+   }
+   &__sub-title {
+   }
+   &__decor {
+      span {
+         position: absolute;
+         &:nth-child(1) {
+            left: 10%;
+            bottom: 0;
+         }
+         &:nth-child(2) {
+            top: 0;
+            left: 0;
+         }
+         &:nth-child(3) {
+            right: 0;
+            top: 35%;
+         }
+         img {
+            max-width: 100%;
+         }
+      }
+   }
+}
+//=======================================================================================================================================================================================================================================================
+
+//=======================================================================================================================================================================================================================================================
 @import "components/modules/scroll/bar";
 @import "components/modules/lock";
 @import "components/modules/designed-text";
